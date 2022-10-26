@@ -10,4 +10,10 @@ const createToken = (data) => {
     return token;
 };
 
-module.exports = { createToken };
+const validateToken = (token) => {
+        const { data } = jwt.verify(token, process.env.JWT_SECRET);
+        return data;
+   
+};
+
+module.exports = { createToken, validateToken };

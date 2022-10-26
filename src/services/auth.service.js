@@ -28,4 +28,9 @@ const validateLogin = async ({ email, password }) => {
     return { type: null, token };
 };
 
-module.exports = { validateBody, validateLogin };
+const validateToken = (token) => {
+    const user = jwtUtil.validateToken(token);
+    return user;
+};
+
+module.exports = { validateBody, validateLogin, validateToken };
