@@ -9,7 +9,6 @@ const login = async (req, res) => {
 
   if (type) return res.status(errorMap.mapError(type)).json({ message: 'Invalid fields' }); 
   return res.status(OK_STATUS).json({ token });
-
 };
 
 module.exports = { login };
