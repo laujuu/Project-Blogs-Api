@@ -8,7 +8,6 @@ const router = express.Router();
 router.use('/login', authRouter);
 
 // rotas privadas
-
 router.use('/user', userRouter);
 
 module.exports = router;
