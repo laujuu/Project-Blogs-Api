@@ -8,5 +8,10 @@ const createCategory = async (name) => {
     if (token) return { type: null, message: category };
     return { type: 'BAD_REQUEST' };
  };
+
+ const getCategories = async () => {
+    const user = await Category.findAll();
+    return user;
+   };
  
- module.exports = { createCategory };
+ module.exports = { createCategory, getCategories };
