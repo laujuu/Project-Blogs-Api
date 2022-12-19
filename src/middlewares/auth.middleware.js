@@ -9,7 +9,7 @@ const validateToken = async (req, res, next) => {
     }
     const user = authService.validateToken(authorization);
 
-    req.user = user;
+    req.body = user;
     next();
   } catch (e) {
     return res.status(401).json({ message: 'Expired or invalid token' });
